@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../component/login_button.dart';
 import '../router/app_router.dart';
+import 'login_page.dart';
+import 'registration_page.dart';
 
 class TopPage extends StatelessWidget {
   @override
@@ -18,13 +20,24 @@ class TopPage extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
-            LoginButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  AppRouter.loginPageRoute(),
+                  MaterialPageRoute(builder: (context) => LoginPage()),
                 );
               },
+              child: Text('Login'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegistrationPage()),
+                );
+              },
+              child: Text('Register'),
             ),
           ],
         ),
