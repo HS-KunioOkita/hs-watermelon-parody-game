@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../game/game_screen.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -29,7 +30,10 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // ログイン処理をここに記述
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GameScreen()),
+                );
               },
               child: Text('Login'),
             ),
