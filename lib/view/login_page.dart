@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
             TextFormField(
               controller: TextEditingController(),
               onFieldSubmitted: (value) {
-                // TODO:エンターキーを押した時の処理
+                // TODO: エンターキーを押した時の処理
               },
               autovalidateMode: AutovalidateMode.onUserInteraction,
               validator: (value) {
