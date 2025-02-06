@@ -68,7 +68,6 @@ class LoginPage extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  // 幅320、高さ44
                   minimumSize: const Size(320, 44),
                 ),
                 child: const Text('Login'),
