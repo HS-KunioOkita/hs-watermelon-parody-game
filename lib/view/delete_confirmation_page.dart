@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'delete_completed_page.dart';
-import 'login_page.dart';
-import 'registration_page.dart';
 
 class DeleteConfirmationPage extends StatelessWidget {
   final String userName;

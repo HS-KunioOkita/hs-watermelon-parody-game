@@ -7,22 +7,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:hs_watermelon_parody_game/main.dart';
+import 'package:hs_watermelon_parody_game/view/top_page.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  //todo: 以下のテストはGithubAction を成功させるために実装したものです。テストコードを追加したら削除してください！！
+  testWidgets('TopPage', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: TopPage(),
+      ),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Tapボタンを検索
+    final text = find.byKey(const Key('titleText'));
+    expect(text, findsOneWidget);
   });
 }

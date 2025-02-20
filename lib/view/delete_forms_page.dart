@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hs_watermelon_parody_game/view/registration_complete_page.dart';
 
 import 'delete_confirmation_page.dart';
 
@@ -71,14 +70,14 @@ class _DeleteFormsPage extends State<DeleteFormsPage> {
                     // TODO:エンターキーを押した時の処理
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    // TODO: バリデーションを実装できる
-                    // if(value == null || value.isEmpty) {
-                    //   // エラーメッセージ
-                    //   return '値を入力してください';
-                    // }
-                    // return null;
-                  },
+                  // validator: (value) {
+                  //   TODO: バリデーションを実装できる
+                  //   if(value == null || value.isEmpty) {
+                  //     // エラーメッセージ
+                  //     return '値を入力してください';
+                  //   }
+                  //   return null;
+                  // },
                   decoration: const InputDecoration(
                     labelText: "PassWord",
                     border: OutlineInputBorder(),

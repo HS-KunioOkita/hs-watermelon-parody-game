@@ -34,14 +34,14 @@ class _RegistrationPage extends State<RegistrationPage> {
                 // TODO:エンターキーを押した時の処理
               },
               autovalidateMode: AutovalidateMode.onUserInteraction,
-              validator: (value) {
-                // TODO: バリデーションを実装できる
-                // if(value == null || value.isEmpty) {
-                //   // エラーメッセージ
-                //   return '値を入力してください';
-                // }
-                // return null;
-              },
+              // validator: (value) {
+              //   TODO: バリデーションを実装できる
+              //   if(value == null || value.isEmpty) {
+              //     // エラーメッセージ
+              //     return '値を入力してください';
+              //   }
+              //   return null;
+              // },
               decoration: const InputDecoration(
                 labelText: "UserName",
                 border: OutlineInputBorder(),
@@ -83,14 +83,14 @@ class _RegistrationPage extends State<RegistrationPage> {
                   // TODO:エンターキーを押した時の処理
                 },
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (value) {
-                  // TODO: バリデーションを実装できる
-                  // if(value == null || value.isEmpty) {
-                  //   // エラーメッセージ
-                  //   return '値を入力してください';
-                  // }
-                  // return null;
-                },
+                // validator: (value) {
+                //   TODO: バリデーションを実装できる
+                //   if(value == null || value.isEmpty) {
+                //     // エラーメッセージ
+                //     return '値を入力してください';
+                //   }
+                //   return null;
+                // },
                 decoration: const InputDecoration(
                   labelText: "PassWord",
                   border: OutlineInputBorder(),
