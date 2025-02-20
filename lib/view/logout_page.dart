@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hs_watermelon_parody_game/game/game_screen.dart';
-import 'package:hs_watermelon_parody_game/view/top_page.dart';
-import 'login_page.dart';
 
 class LogoutPage extends StatelessWidget {
   const LogoutPage({super.key});

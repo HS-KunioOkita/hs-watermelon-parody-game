@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hs_watermelon_parody_game/view/delete_forms_page.dart';
-import 'package:hs_watermelon_parody_game/view/logout_page.dart';
 import 'login_page.dart';
 import 'registration_page.dart';
 

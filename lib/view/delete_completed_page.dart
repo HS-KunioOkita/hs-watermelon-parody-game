@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hs_watermelon_parody_game/view/top_page.dart';
 
 class DeleteCompletedPage extends StatefulWidget {
   const DeleteCompletedPage({super.key});

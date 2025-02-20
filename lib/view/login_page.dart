@@ -22,14 +22,14 @@ class LoginPage extends StatelessWidget {
                 // TODO: エンターキーを押した時の処理
               },
               autovalidateMode: AutovalidateMode.onUserInteraction,
-              validator: (value) {
-                // TODO: バリデーションを実装できる
-                // if(value == null || value.isEmpty) {
-                //   // エラーメッセージ
-                //   return '値を入力してください';
-                // }
-                // return null;
-              },
+              // validator: (value) {
+              //   TODO: バリデーションを実装できる
+              //   if(value == null || value.isEmpty) {
+              //     // エラーメッセージ
+              //     return '値を入力してください';
+              //   }
+              //   return null;
+              // },
               decoration: const InputDecoration(
                 labelText: "ID",
                 border: OutlineInputBorder(),
@@ -43,14 +43,14 @@ class LoginPage extends StatelessWidget {
                   // TODO:エンターキーを押した時の処理
                 },
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (value) {
-                  // TODO: バリデーションを実装できる
-                  // if(value == null || value.isEmpty) {
-                  //   // エラーメッセージ
-                  //   return '値を入力してください';
-                  // }
-                  // return null;
-                },
+                // validator: (value) {
+                //   TODO: バリデーションを実装できる
+                //   if(value == null || value.isEmpty) {
+                //     // エラーメッセージ
+                //     return '値を入力してください';
+                //   }
+                //   return null;
+                // },
                 decoration: const InputDecoration(
                   labelText: "パスワード",
                   border: OutlineInputBorder(),

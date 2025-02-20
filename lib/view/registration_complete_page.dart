@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hs_watermelon_parody_game/view/top_page.dart';
 
 class RegistrationCompletePage extends StatefulWidget {
   const RegistrationCompletePage({super.key});
