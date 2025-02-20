@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hs_watermelon_parody_game/game/game_screen.dart';
+import 'package:hs_watermelon_parody_game/view/top_page.dart';
 import 'login_page.dart';
 
 class LogoutPage extends StatelessWidget {
@@ -8,6 +9,9 @@ class LogoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('ログアウト'),
+      ),
       body: Center(
         //中央揃え
         child: Column(
@@ -25,9 +29,8 @@ class LogoutPage extends StatelessWidget {
               margin: const EdgeInsets.only(top: 44.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  Navigator.popUntil(
+                      context, ModalRoute.withName("/top")
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -40,10 +43,8 @@ class LogoutPage extends StatelessWidget {
               margin: const EdgeInsets.only(top: 20.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pop(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => GameScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

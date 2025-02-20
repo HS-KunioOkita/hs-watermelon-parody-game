@@ -21,16 +21,12 @@ class _DeleteCompletedPage extends State<DeleteCompletedPage> {
     //Timerのインスタンスを作る
     //Timerの引数は遅延時間(Duration)と経過時間後の操作を記したコールバック関数の二つを搭載する
     timer = Timer(
-      const Duration(seconds: 2),
-          () {
+      const Duration(seconds: 2), () {
         // コールバックを渡しておく。ここに遷移メソッドは書いておく
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => TopPage(),
-          ),
+        Navigator.popUntil(
+            context, ModalRoute.withName("/top")
         );
-      },
+      }
     );
   }
 
@@ -45,7 +41,8 @@ class _DeleteCompletedPage extends State<DeleteCompletedPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('ユーザ大会完了'),
+          title: const Text('ユーザ退会完了'),
+          automaticallyImplyLeading: false,
         ),
         body: Center(
           child: Column(
