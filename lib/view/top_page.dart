@@ -23,6 +23,7 @@ class TopPage extends StatelessWidget {
           child: Column(
             //要素を縦に並べる
             mainAxisAlignment: MainAxisAlignment.center,
+            key: const Key('titleText'),
             children: <Widget>[
               Container(
                 // ゲームタイトル
