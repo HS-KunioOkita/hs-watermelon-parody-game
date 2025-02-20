@@ -3,6 +3,6 @@ import '../view/login_page.dart';
 
 class AppRouter {
   static Route loginPageRoute() {
-    return MaterialPageRoute(builder: (context) => LoginPage());
+    return MaterialPageRoute(builder: (context) => const LoginPage());
   }
 }

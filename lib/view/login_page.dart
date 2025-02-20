@@ -64,7 +64,7 @@ class LoginPage extends StatelessWidget {
                   // TODO: ここにAuth処理を呼び出すメソッドを記載する
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => GameScreen()),
+                    MaterialPageRoute(builder: (context) => const GameScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

@@ -3,10 +3,12 @@ import 'package:hs_watermelon_parody_game/game/game_screen.dart';
 import 'view/top_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/top",
       routes: {
         '/top': (context) => const TopPage(),
-        '/game': (context) => GameScreen(),
+        '/game': (context) => const GameScreen(),
       },
     );
   }
