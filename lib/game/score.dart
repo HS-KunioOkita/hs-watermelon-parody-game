@@ -6,5 +6,5 @@ class Score {
 class BestScore {
   final bestScore = 100;
 
-  // TODO: ここでDataStoreからベストスコアを取得する処理
+  // TODO: DataStoreからベストスコアを取得する処理
 }
