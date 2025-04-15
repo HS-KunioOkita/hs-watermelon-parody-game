@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../game/game_screen.dart';
+import 'game_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -64,7 +64,7 @@ class LoginPage extends StatelessWidget {
                   // TODO: ここにAuth処理を呼び出すメソッドを記載する
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const GameScreen()),
+                    MaterialPageRoute(builder: (context) => const GamePage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

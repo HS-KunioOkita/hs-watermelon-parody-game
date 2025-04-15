@@ -30,6 +30,10 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      # ローカライズファイルの作成
+      - name: Generate localization files
+        run: flutter gen-l10n
+
       # Uncomment this step to verify the use of 'dart format' on each commit.
       # - name: Verify formatting
       #   run: dart format --output=none --set-exit-if-changed .

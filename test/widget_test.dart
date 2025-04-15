@@ -8,17 +8,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hs_watermelon_parody_game/view/top_page.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
-  //todo: 以下のテストはGithubAction を成功させるために実装したものです。テストコードを追加したら削除してください！！
   testWidgets('TopPage', (tester) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: TopPage(),
+        localizationsDelegates: [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale('en'),
+          Locale('ja'),
+        ],
       ),
     );
 
-    // Tapボタンを検索
     final text = find.byKey(const Key('titleText'));
     expect(text, findsOneWidget);
   });

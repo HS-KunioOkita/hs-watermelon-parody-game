@@ -1,0 +1,6 @@
+# .arbファイルの配置ディレクトリ
+arb-dir: lib/l10n
+# ベースとなる.arbファイル
+template-arb-file: app_en.arb
+# 生成される.dartのファイル名
+output-localization-file: app_localizations.dart

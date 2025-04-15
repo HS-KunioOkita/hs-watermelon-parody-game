@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'login_page.dart';
 import 'registration_page.dart';
 
@@ -9,7 +10,7 @@ class TopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('スイカゲーム'), //TODO: テキストをどこかのファイルにまとめた方が改修しやすそう
+        title: Text(AppLocalizations.of(context)!.appTitle), //TODO: テキストをどこかのファイルにまとめた方が改修しやすそう
       ),
       body: Container(
         //背景画像
