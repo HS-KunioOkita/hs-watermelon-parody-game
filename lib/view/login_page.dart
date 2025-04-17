@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'game_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -8,7 +9,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: Text(AppLocalizations.of(context)!.login),
       ),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -30,9 +31,9 @@ class LoginPage extends StatelessWidget {
               //   }
               //   return null;
               // },
-              decoration: const InputDecoration(
-                labelText: "ID",
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context)!.loginId,
+                border: const OutlineInputBorder(),
               ),
             ),
             Container(
@@ -51,9 +52,9 @@ class LoginPage extends StatelessWidget {
                 //   }
                 //   return null;
                 // },
-                decoration: const InputDecoration(
-                  labelText: "パスワード",
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.passWord,
+                  border: const OutlineInputBorder(),
                 ),
               ),
             ),
@@ -70,7 +71,7 @@ class LoginPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(320, 44),
                 ),
-                child: const Text('Login'),
+                child: Text(AppLocalizations.of(context)!.login),
               ),
             ),
           ],

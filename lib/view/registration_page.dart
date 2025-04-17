@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hs_watermelon_parody_game/view/registration_complete_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
@@ -18,7 +19,7 @@ class _RegistrationPage extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ユーザ登録'),
+        title: Text(AppLocalizations.of(context)!.userRegistration),
       ),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -42,9 +43,9 @@ class _RegistrationPage extends State<RegistrationPage> {
               //   }
               //   return null;
               // },
-              decoration: const InputDecoration(
-                labelText: "UserName",
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context)!.userName,
+                border: const OutlineInputBorder(),
               )
             ),
             Container(
@@ -66,9 +67,9 @@ class _RegistrationPage extends State<RegistrationPage> {
                   }
                   return null;
                 },
-                decoration: const InputDecoration(
-                  labelText: "LoginID",
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.loginId,
+                  border: const OutlineInputBorder(),
                 )
               ),
             ),
@@ -91,9 +92,9 @@ class _RegistrationPage extends State<RegistrationPage> {
                 //   }
                 //   return null;
                 // },
-                decoration: const InputDecoration(
-                  labelText: "PassWord",
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.passWord,
+                  border: const OutlineInputBorder(),
                 )
               ),
             ),
@@ -113,7 +114,7 @@ class _RegistrationPage extends State<RegistrationPage> {
                   // 幅320、高さ44
                   minimumSize: const Size(320, 44),
                 ),
-                child: const Text('ユーザ登録'),
+                child: Text(AppLocalizations.of(context)!.userRegistration),
               ),
             ),
           ],

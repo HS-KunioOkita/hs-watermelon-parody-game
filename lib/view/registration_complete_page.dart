@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationCompletePage extends StatefulWidget {
@@ -41,7 +41,7 @@ class _RegistrationCompletePage extends State<RegistrationCompletePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ユーザ登録完了'),
+        title: Text(AppLocalizations.of(context)!.userRegistrationCompleted),
         automaticallyImplyLeading: false,
       ),
       body: Center(
@@ -51,9 +51,9 @@ class _RegistrationCompletePage extends State<RegistrationCompletePage> {
             Container(
               // ゲームタイトル
               color: const Color(0xFFFFFFAE),
-              child: const Text(
-                '登録が完了しました',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              child:  Text(
+                AppLocalizations.of(context)!.userRegistrationHasCompleted,
+                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LogoutPage extends StatelessWidget {
   const LogoutPage({super.key});
@@ -7,7 +8,7 @@ class LogoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ログアウト'),
+        title: Text(AppLocalizations.of(context)!.logOut),
         automaticallyImplyLeading: false,
       ),
       body: Center(
@@ -18,9 +19,9 @@ class LogoutPage extends StatelessWidget {
           children: <Widget>[
             Container(
               color: const Color(0xFFFFFFAE),
-              child: const Text(
-                'ログアウトしますか',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              child: Text(
+                AppLocalizations.of(context)!.logOutConfirm,
+                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
             Container(
@@ -34,7 +35,7 @@ class LogoutPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(320, 44),
                 ),
-                child: const Text('はい'),
+                child: Text(AppLocalizations.of(context)!.yes),
               ),
             ),
             Container(
@@ -48,7 +49,7 @@ class LogoutPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(320, 44),
                 ),
-                child: const Text('いいえ'),
+                child: Text(AppLocalizations.of(context)!.no)
               ),
             ),
           ],
