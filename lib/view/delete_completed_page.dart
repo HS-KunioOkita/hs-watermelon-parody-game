@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class DeleteCompletedPage extends StatefulWidget {
@@ -40,7 +40,7 @@ class _DeleteCompletedPage extends State<DeleteCompletedPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('ユーザ退会完了'),
+          title: Text(AppLocalizations.of(context)!.userDeleteCompleted),
           automaticallyImplyLeading: false,
         ),
         body: Center(
@@ -48,11 +48,10 @@ class _DeleteCompletedPage extends State<DeleteCompletedPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                // ゲームタイトル
                 color: const Color(0xFFFFFFAE),
-                child: const Text(
-                  '退会が完了しました',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                child: Text(
+                  AppLocalizations.of(context)!.userDeleteSuccessMessage,
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
             ],

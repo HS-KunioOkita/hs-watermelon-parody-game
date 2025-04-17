@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'delete_completed_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class DeleteConfirmationPage extends StatelessWidget {
   final String userName;
@@ -12,7 +14,7 @@ class DeleteConfirmationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ユーザ退会確認'),
+        title: Text(AppLocalizations.of(context)!.userDeleteConfirm),
       ),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -21,9 +23,9 @@ class DeleteConfirmationPage extends StatelessWidget {
           children: <Widget>[
             Container(
               color: const Color(0xFFFFFFAE),
-              child: const Text(
-                '以下のアカウントで退会しますか？',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
+              child: Text(
+                AppLocalizations.of(context)!.userDeleteCheckAccount,
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
               ),
             ),
             Container(
@@ -31,9 +33,9 @@ class DeleteConfirmationPage extends StatelessWidget {
               child: TextFormField(
                 initialValue: userName,
                 enabled: false,
-                decoration: const InputDecoration(
-                  labelText: "UserName",
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.userName,
+                  border: const OutlineInputBorder(),
                 )
               ),
             ),
@@ -42,9 +44,9 @@ class DeleteConfirmationPage extends StatelessWidget {
               child: TextFormField(
                   initialValue: loginId,
                   enabled: false,
-                  decoration: const InputDecoration(
-                    labelText: "LoginID",
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.loginId,
+                    border: const OutlineInputBorder(),
                   )
               ),
             ),
@@ -74,7 +76,7 @@ class DeleteConfirmationPage extends StatelessWidget {
                   // 幅320、高さ44
                   minimumSize: const Size(320, 44),
                 ),
-                child: const Text('退会する'),
+                child: Text(AppLocalizations.of(context)!.userDeleteExecute),
               ),
             ),
           ],

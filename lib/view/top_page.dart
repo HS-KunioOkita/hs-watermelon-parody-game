@@ -29,9 +29,9 @@ class TopPage extends StatelessWidget {
               Container(
                 // ゲームタイトル
                 color: const Color(0xFFFFFFAE),
-                child: const Text(
-                  'スイカゲームへようこそ',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                child: Text(
+                  AppLocalizations.of(context)!.welcomeMessage,
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
               Container(
@@ -47,7 +47,7 @@ class TopPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(320, 44),
                   ),
-                  child: const Text('ログイン'),
+                  child: Text(AppLocalizations.of(context)!.login),
                 ),
               ),
               Container(
@@ -64,7 +64,7 @@ class TopPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(320, 44),
                   ),
-                  child: const Text('ユーザ登録'),
+                  child: Text(AppLocalizations.of(context)!.userRegistration),
                 ),
               ),
             ],

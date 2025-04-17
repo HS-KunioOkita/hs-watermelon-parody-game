@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'delete_confirmation_page.dart';
 
 class DeleteFormsPage extends StatefulWidget {
@@ -19,7 +19,7 @@ class _DeleteFormsPage extends State<DeleteFormsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ユーザ退会'),
+        title: Text(AppLocalizations.of(context)!.userDelete),
       ),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -27,11 +27,10 @@ class _DeleteFormsPage extends State<DeleteFormsPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              // ゲームタイトル
               color: const Color(0xFFFFFFAE),
-              child: const Text(
-                '退会したいアカウントの情報を入力してください',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
+              child: Text(
+                AppLocalizations.of(context)!.userDeleteInputInfo,
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
               ),
             ),
             Container(
@@ -49,13 +48,13 @@ class _DeleteFormsPage extends State<DeleteFormsPage> {
                     // TODO: バリデーションを実装できる
                     if(value == null || value.isEmpty) {
                       // エラーメッセージ
-                      return '値を入力してください';
+                      return AppLocalizations.of(context)!.errorNoValue;
                     }
                     return null;
                   },
-                  decoration: const InputDecoration(
-                    labelText: "LoginID",
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.loginId,
+                    border: const OutlineInputBorder(),
                   )
               ),
             ),
@@ -74,13 +73,13 @@ class _DeleteFormsPage extends State<DeleteFormsPage> {
                   //   TODO: バリデーションを実装できる
                   //   if(value == null || value.isEmpty) {
                   //     // エラーメッセージ
-                  //     return '値を入力してください';
+                  //     return AppLocalizations.of(context)!.errorNoValue;
                   //   }
                   //   return null;
                   // },
-                  decoration: const InputDecoration(
-                    labelText: "PassWord",
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.passWord,
+                    border: const OutlineInputBorder(),
                   )
               ),
             ),
@@ -99,7 +98,7 @@ class _DeleteFormsPage extends State<DeleteFormsPage> {
                   // 幅320、高さ44
                   minimumSize: const Size(320, 44),
                 ),
-                child: const Text('確認'),
+                child: Text(AppLocalizations.of(context)!.userDeleteConfirm),
               ),
             ),
           ],
