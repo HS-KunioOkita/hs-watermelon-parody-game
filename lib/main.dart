@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hs_watermelon_parody_game/game/game_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hs_watermelon_parody_game/view/loding_page.dart';
 import 'view/top_page.dart';
 
 void main() {
@@ -29,8 +30,9 @@ class MyApp extends StatelessWidget {
         Locale('ja'),
       ],
       // home: const TopPage(),
-      initialRoute: "/top",
+      initialRoute: "/",
       routes: {
+        '/': (context) => const LoadingPage(),
         '/top': (context) => const TopPage(),
         '/game': (context) => const GameScreen(),
       },
