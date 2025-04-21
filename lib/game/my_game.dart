@@ -10,7 +10,7 @@ class MyGame extends FlameGame {
     add(TextComponent(
       text: 'Hello World',
       position: Vector2(100, 100),
-      textRenderer: TextPaint(style: TextStyle(fontSize: 24, color: Colors.white)),
+      textRenderer: TextPaint(style: const TextStyle(fontSize: 24, color: Colors.white)),
     ));
   }
 }

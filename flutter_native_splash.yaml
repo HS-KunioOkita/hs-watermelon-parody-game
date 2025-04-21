@@ -1,0 +1,6 @@
+flutter_native_splash:
+  color: "#ffffcc"
+  image: images/heartsoft_chan.png
+  android_12:
+    image:  images/heartsoft_chan_android12.png
+    icon_background_color: "#ffffcc"

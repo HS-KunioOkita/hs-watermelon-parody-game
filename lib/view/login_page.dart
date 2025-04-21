@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../game/game_screen.dart';
+import 'game_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -22,14 +22,14 @@ class LoginPage extends StatelessWidget {
                 // TODO: エンターキーを押した時の処理
               },
               autovalidateMode: AutovalidateMode.onUserInteraction,
-              validator: (value) {
-                // TODO: バリデーションを実装できる
-                // if(value == null || value.isEmpty) {
-                //   // エラーメッセージ
-                //   return '値を入力してください';
-                // }
-                // return null;
-              },
+              // validator: (value) {
+              //   TODO: バリデーションを実装できる
+              //   if(value == null || value.isEmpty) {
+              //     // エラーメッセージ
+              //     return '値を入力してください';
+              //   }
+              //   return null;
+              // },
               decoration: const InputDecoration(
                 labelText: "ID",
                 border: OutlineInputBorder(),
@@ -43,14 +43,14 @@ class LoginPage extends StatelessWidget {
                   // TODO:エンターキーを押した時の処理
                 },
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (value) {
-                  // TODO: バリデーションを実装できる
-                  // if(value == null || value.isEmpty) {
-                  //   // エラーメッセージ
-                  //   return '値を入力してください';
-                  // }
-                  // return null;
-                },
+                // validator: (value) {
+                //   TODO: バリデーションを実装できる
+                //   if(value == null || value.isEmpty) {
+                //     // エラーメッセージ
+                //     return '値を入力してください';
+                //   }
+                //   return null;
+                // },
                 decoration: const InputDecoration(
                   labelText: "パスワード",
                   border: OutlineInputBorder(),
@@ -64,7 +64,7 @@ class LoginPage extends StatelessWidget {
                   // TODO: ここにAuth処理を呼び出すメソッドを記載する
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => GameScreen()),
+                    MaterialPageRoute(builder: (context) => const GamePage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

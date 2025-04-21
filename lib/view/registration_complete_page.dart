@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hs_watermelon_parody_game/view/top_page.dart';
 
 class RegistrationCompletePage extends StatefulWidget {
   const RegistrationCompletePage({super.key});
@@ -24,11 +23,8 @@ class _RegistrationCompletePage extends State<RegistrationCompletePage> {
       const Duration(seconds: 2),
       () {
         // コールバックを渡しておく。ここに遷移メソッドは書いておく
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => TopPage(),
-          ),
+        Navigator.popUntil(
+            context, ModalRoute.withName("/top")
         );
       },
     );
@@ -46,6 +42,7 @@ class _RegistrationCompletePage extends State<RegistrationCompletePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ユーザ登録完了'),
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(
