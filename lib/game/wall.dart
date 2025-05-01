@@ -6,15 +6,45 @@ class WallDraw extends BodyComponent {
 
   WallDraw(this.startPosition, this.endPosition);
 
-  // TODO:左右の壁にもあたり判定をつける
   @override
   Body createBody() {
-    final length = (endPosition.x - startPosition.x);
-    // 当たり判定のある長方形の図形を作成(横：下の壁の長さ、縦：線の太さ、中心点：下の壁の中心、角度：0度)
-    final shape = PolygonShape()..setAsBox(length, 10, Vector2(length / 2, startPosition.y), 0);
-    final fixtureDef = FixtureDef(shape)..restitution = 0.2;
-    final bodyDef = BodyDef(position: Vector2.zero(), type: BodyType.static);
-    return world.createBody(bodyDef)..createFixture(fixtureDef);
+    final wallBody = world.createBody(BodyDef(position: Vector2.zero(), type: BodyType.static));
+
+    const double wallThickness = 10; // 壁の太さ（共通）
+
+    // 下の壁
+    final double horizontalLength = (endPosition.x - startPosition.x).abs();
+    final shapeBottom = PolygonShape()
+      ..setAsBox(
+        horizontalLength / 2,
+        wallThickness / 2,
+        Vector2(startPosition.x + horizontalLength / 2, startPosition.y),
+        0,
+      );
+    wallBody.createFixture(FixtureDef(shapeBottom)..restitution = 0.2);
+
+    // 左の壁
+    final double verticalHeight = (endPosition.y - startPosition.y).abs();
+    final shapeLeft = PolygonShape()
+      ..setAsBox(
+        wallThickness / 2,
+        verticalHeight / 2,
+        Vector2(startPosition.x, startPosition.y - verticalHeight / 2),
+        0,
+      );
+    wallBody.createFixture(FixtureDef(shapeLeft)..restitution = 0.2);
+
+    // 右の壁
+    final shapeRight = PolygonShape()
+      ..setAsBox(
+        wallThickness / 2,
+        verticalHeight / 2,
+        Vector2(endPosition.x, startPosition.y - verticalHeight / 2),
+        0,
+      );
+    wallBody.createFixture(FixtureDef(shapeRight)..restitution = 0.2);
+
+    return wallBody;
   }
 
   // 壁描写メソッド
@@ -25,54 +55,4 @@ class WallDraw extends BodyComponent {
     canvas.drawLine(Offset(startPosition.x, startPosition.y), Offset(endPosition.x, endPosition.y), paint);
   }
 }
-
-/*
-    // 左の壁
-    final leftShape = PolygonShape()
-      ..setAsBox(10, endPosition.y - startPosition.y, Vector2(startPosition.x, (startPosition.y + endPosition.y) / 2), 0);
-    final leftFixtureDef = FixtureDef(leftShape)
-      ..restitution = 0.2;
-    final leftBodyDef = BodyDef(position: Vector2.zero(), type: BodyType.static);
-    final leftWall = world.createBody(leftBodyDef)..createFixture(leftFixtureDef);
-
-    // 右の壁
-    final rightShape = PolygonShape()
-      ..setAsBox(10, endPosition.y - startPosition.y, Vector2(endPosition.x, (startPosition.y + endPosition.y) / 2), 0);
-    final rightFixtureDef = FixtureDef(rightShape)..restitution = 0.2;
-    final rightBodyDef = BodyDef(position: Vector2.zero(), type: BodyType.static);
-    final rightWall = world.createBody(rightBodyDef)..createFixture(rightFixtureDef);
-
-    return [bottomWall, leftWall, rightWall];
-
-  }
-
-  @override
-  void render(Canvas canvas) {
-    final paint = Paint()
-      ..color = Colors.white
-      ..strokeWidth = 5;
-
-    // 下の壁の描画
-    canvas.drawLine(
-      Offset(startPosition.x, startPosition.y),
-      Offset(endPosition.x, endPosition.y),
-      paint
-    );
-
-    // 左の壁の描画
-    canvas.drawLine(
-      Offset(startPosition.x, startPosition.y),
-      Offset(startPosition.x, endPosition.y),
-      paint,
-    );
-
-    // 右の壁の描画
-    canvas.drawLine(
-      Offset(endPosition.x, startPosition.y),
-      Offset(endPosition.x, endPosition.y),
-      paint,
-    );
-  }
-}
-*/
 
