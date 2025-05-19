@@ -8,7 +8,7 @@ class Cherry extends Fruit {
   String get fruitName => 'Cherry';
 
   @override
-  Vector2 get size => Vector2.all(1.0); // m単位
+  Vector2 get size => Vector2.all(100.0); // m単位
 
   @override
   String get fruitImage => 'cherry.png'; // assets/images/cherry.png
@@ -20,14 +20,14 @@ class Cherry extends Fruit {
   int get restitution => 0;
 
   @override
-  int get density => 1;
+  int get density => 100;
 
   @override
   Future<SpriteComponent> loadSprite() async {
     final sprite = await Sprite.load(fruitImage);
     return SpriteComponent(
       sprite: sprite,
-      size: size * 10, // 表示サイズ調整
+      size: size, // 表示サイズ調整
       anchor: Anchor.center,
     );
   }

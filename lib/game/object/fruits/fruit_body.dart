@@ -1,9 +1,10 @@
 import 'package:flame/events.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'fruit.dart';
 
-abstract class FruitBody extends BodyComponent {
+abstract class FruitBody extends BodyComponent with TapCallbacks {
   final Fruit fruit;
   @override
   final Vector2 position;
