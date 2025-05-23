@@ -1,11 +1,14 @@
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flame/events.dart';
 import 'package:hs_watermelon_parody_game/game/score.dart';
-import 'package:hs_watermelon_parody_game/game/cherry.dart';
+import 'package:hs_watermelon_parody_game/game/object/fruits/cherry.dart';
 import 'package:hs_watermelon_parody_game/game/wall.dart';
 import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:hs_watermelon_parody_game/game/cloud.dart';
+
+import 'fruitsDraw.dart';
+import 'object/fruits/cherry_body.dart';
 
 class GameUIObject extends Forge2DGame with TapDetector {
 
@@ -27,9 +30,8 @@ class GameUIObject extends Forge2DGame with TapDetector {
   }
 
   // フルーツ描画メソッド
-  void fruitsView(Vector2 position) {
-    world.gravity = Vector2(0, 0);
-    add(FruitsDraw(position, Cherry().density, Cherry().restitution));
+  Future<void> fruitsView(Vector2 position) async {
+    await add(CherryBody(Vector2(screenSize.width * 0.5, screenSize.height * 0.15)));
   }
 
   void cloudView() {
@@ -38,7 +40,7 @@ class GameUIObject extends Forge2DGame with TapDetector {
 
   @override
   Future<void> onLoad() async {
-    world.gravity = Vector2(0, 0);
+    world.gravity = Vector2(0, 10);
     wallView();
     fruitsView(Vector2(screenSize.width*0.5,screenSize.height*0.15));
     pawnBallPeriodically();
@@ -51,33 +53,9 @@ class GameUIObject extends Forge2DGame with TapDetector {
       fruitsView(Vector2(screenSize.width*0.5, screenSize.height*0.15));
     });
   }
-  @override
-  void onTapDown(TapDownInfo info) {
-    Cloud(this).fallFruit();
-  }
-}
 
-// フルーツ描画用クラス
-class FruitsDraw extends BodyComponent {
-  final Vector2 position;
-  final double density;
-  final double restitution;
-
-  FruitsDraw(this.position, this.density, this.restitution);
-
-  @override
-  Body createBody() {
-    final shape = CircleShape()..radius = 10;
-    final fixtureDef = FixtureDef(shape)
-      ..density = density
-      ..restitution = restitution;
-    final bodyDef = BodyDef(position: position, type: BodyType.dynamic);
-    return world.createBody(bodyDef)..createFixture(fixtureDef);
-  }
-
-  @override
-  void render(Canvas canvas) {
-    final paint = Paint()..color = Cherry().loadFruitImage();
-    canvas.drawCircle(Offset.zero, 10, paint);
-  }
+  // @override
+  // void onTapDown(TapDownInfo info) {
+  //   Cloud(this).fallFruit();
+  // }
 }
