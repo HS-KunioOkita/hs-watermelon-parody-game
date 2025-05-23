@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flame/events.dart';
+import 'package:hs_watermelon_parody_game/game/object/fruits/watermelon_body.dart';
 import 'package:hs_watermelon_parody_game/game/score.dart';
 import 'package:hs_watermelon_parody_game/game/object/fruits/cherry.dart';
 import 'package:hs_watermelon_parody_game/game/wall.dart';
@@ -7,7 +10,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:hs_watermelon_parody_game/game/cloud.dart';
 
-import 'fruitsDraw.dart';
+import 'fruits_draw.dart';
 import 'object/fruits/cherry_body.dart';
 
 class GameUIObject extends Forge2DGame with TapDetector {
@@ -31,7 +34,14 @@ class GameUIObject extends Forge2DGame with TapDetector {
 
   // フルーツ描画メソッド
   Future<void> fruitsView(Vector2 position) async {
-    await add(CherryBody(Vector2(screenSize.width * 0.5, screenSize.height * 0.15)));
+    final fruitBodies = [
+          () => CherryBody(position),
+          () => WatermelonBody(position),
+    ];
+
+    final random = Random();
+    final fruit = fruitBodies[random.nextInt(fruitBodies.length)]();
+    await add(fruit);
   }
 
   void cloudView() {
