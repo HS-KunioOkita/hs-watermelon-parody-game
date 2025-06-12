@@ -33,13 +33,17 @@ class GameUIObject extends Forge2DGame with TapDetector {
   }
 
   void cloudView() {
-    // TODO:雲を描画させる
+    final cloud = Cloud(this);
+    // フルーツの少し上くらいに雲を描画
+    cloud.position = Vector2(0, (screenSize.height*0.15) - 50);
+    add(cloud);
   }
 
   @override
   Future<void> onLoad() async {
     world.gravity = Vector2(0, 0);
     wallView();
+    cloudView();
     fruitsView(Vector2(screenSize.width*0.5,screenSize.height*0.15));
     pawnBallPeriodically();
   }
@@ -51,6 +55,8 @@ class GameUIObject extends Forge2DGame with TapDetector {
       fruitsView(Vector2(screenSize.width*0.5, screenSize.height*0.15));
     });
   }
+
+  // タップ時にフルーツ落下処理メソッドを呼び出し
   @override
   void onTapDown(TapDownInfo info) {
     Cloud(this).fallFruit();
