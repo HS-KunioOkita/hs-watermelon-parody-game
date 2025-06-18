@@ -33,8 +33,34 @@ class _DeleteFormsPage extends State<DeleteFormsPage> {
                 style: const TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
               ),
             ),
+            // ユーザ名入力フィールド
             Container(
               margin: const EdgeInsets.only(top: 32.0),
+              child: TextFormField(
+                  controller: TextEditingController(),
+                  onChanged: (value) {
+                    userName = value;
+                  },
+                  onFieldSubmitted: (value) {
+                    // TODO:エンターキーを押した時の処理
+                  },
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    // TODO: バリデーションを実装できる
+                    if(value == null || value.isEmpty) {
+                      // エラーメッセージ
+                      return AppLocalizations.of(context)!.errorNoValue;
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.userName,
+                    border: const OutlineInputBorder(),
+                  )
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 16.0),
               child: TextFormField(
                   controller: TextEditingController(),
                   onChanged: (value) {
@@ -90,7 +116,7 @@ class _DeleteFormsPage extends State<DeleteFormsPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => DeleteConfirmationPage(loginId: loginId, userName: 'ユーザ名',)
+                          builder: (context) => DeleteConfirmationPage(loginId: loginId, userName: userName,)
                       )
                   );
                 },
